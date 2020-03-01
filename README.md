@@ -35,6 +35,7 @@ We created 4 data-sets from FER and the FER+ labels. Follow the instructions to 
 - You can stop early as the scripts save regularly.
 
 
+
 ## Config file
 The config file can be found at the root of the project and contains 
 the parameters you can change in order to train and test the model.
@@ -76,8 +77,10 @@ Before testing, check the config values for data_column, current_best_model and 
 
 ### On FER, cropped FER, FER+ or cropped FER+ test set 
 
-- In model_testing.py, replace the last line by ```test_on_fer_test_set(fer_path)``` 
-(with fer_path the path of the data-set).
+- In model_testing.py, replace the last line by ```test_on_fer_test_set(ferplus_cropped_path)``` 
+with ferplus_cropped_path replaced by the path of the FER+ cropped data-set.
+This is to be sure to use the exact same test set for all models, 
+as some faces are removed from FER to FER+ and because of cropping.
 - Run ```python3 model_testing.py```
 This will run the chosen model for all images in the test set, print the results and plot the confusion matrices.
 

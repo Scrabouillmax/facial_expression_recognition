@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-from torchvision import models
 
 
 def Convblock(in_channel, out_channel, norm_layer=True):
